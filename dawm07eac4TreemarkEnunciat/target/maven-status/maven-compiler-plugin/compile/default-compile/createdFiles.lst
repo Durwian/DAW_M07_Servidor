@@ -1,0 +1,11 @@
+cat\xtec\ioc\domain\repository\ArticleRepository.class
+cat\xtec\ioc\controller\BotigaController.class
+cat\xtec\ioc\service\impl\ArticleServiceImpl.class
+cat\xtec\ioc\domain\repository\impl\ArticleDAO.class
+cat\xtec\ioc\domain\Article.class
+cat\xtec\ioc\domain\repository\impl\DBConnection.class
+cat\xtec\ioc\service\VendaService.class
+cat\xtec\ioc\controller\VendesController.class
+cat\xtec\ioc\domain\repository\impl\InMemoryArticleRepository.class
+cat\xtec\ioc\service\ArticleService.class
+cat\xtec\ioc\service\impl\VendaServiceImpl.class
