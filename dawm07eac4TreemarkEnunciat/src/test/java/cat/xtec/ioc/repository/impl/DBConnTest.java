@@ -39,7 +39,6 @@ public class DBConnTest {
     @Test
     public void connectarAmbLaBaseDeDades() throws IOException, SQLException {
         connection = dBConnection.getConnection();
-        System.out.println("Nom base dades:   " + connection.getMetaData().getDriverName());
         Assert.assertEquals("H2 JDBC Driver", connection.getMetaData().getDriverName());
         Assert.assertEquals("ARTICLES_DB", connection.getCatalog());
     }

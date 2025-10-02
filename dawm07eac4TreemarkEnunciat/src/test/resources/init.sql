@@ -1,4 +1,4 @@
-CREATE TABLE articles(codi VARCHAR(100) PRIMARY KEY NOT NULL,
+CREATE TABLE IF NOT EXISTS articles(codi VARCHAR(100) PRIMARY KEY NOT NULL,
                   numeroUnitats INTEGER NOT NULL,
                   numeroVendes  INTEGER NOT NULL,
                   titol VARCHAR(250) NOT NULL,
