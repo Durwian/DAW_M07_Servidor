@@ -25,7 +25,7 @@ public class DBConnTest {
     private String connectionFile = "db_test.properties";
 
     @Before
-    public void setUp() throws SQLException{
+    public void setUp(){
         dBConnection = new DBConnection(connectionFile);
     }
 
