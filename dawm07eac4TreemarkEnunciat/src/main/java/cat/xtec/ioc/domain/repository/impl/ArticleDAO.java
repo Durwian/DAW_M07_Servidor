@@ -6,8 +6,6 @@ package cat.xtec.ioc.domain.repository.impl;
 
 
 import cat.xtec.ioc.domain.Article;
-import cat.xtec.ioc.domain.repository.ArticleRepository;
-import cat.xtec.ioc.domain.repository.impl.DBConnection;
 
 import java.io.IOException;
 import java.sql.Connection;

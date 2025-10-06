@@ -50,6 +50,7 @@ public class InMemoryArticleRepository implements ArticleRepository {
         this.llista.add(recurs);
     }
 
+    @Override
     public List<Article> getAllArticles() {
         return llista; 
     }

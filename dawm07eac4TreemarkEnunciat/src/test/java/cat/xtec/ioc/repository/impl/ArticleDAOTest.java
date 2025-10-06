@@ -28,7 +28,8 @@ public class ArticleDAOTest {
     
     @Before
     public void setUp(){
-    dBConnection = new DBConnection(connectionFile);
+        dBConnection = new DBConnection(connectionFile);
+        articleDAO = new ArticleDAO(dBConnection);
     }
     
     @After
@@ -38,7 +39,6 @@ public class ArticleDAOTest {
 
     @Test
     public void getAllArticles() throws SQLException{
-        articleDAO = new ArticleDAO(dBConnection);
         List<Article> articles = articleDAO.getAllArticles();
         Assert.assertEquals("Articles no hauria destar buit", 6, articles.size());
     }
@@ -54,12 +54,18 @@ public class ArticleDAOTest {
     }
     
     @Test
-    public void addArticle(Article article){
+    public void addArticle() throws Exception{
         String codi = "6";
-        String numeroUnitats = "4";
-        String numeroVendes = "1";
+        Integer numeroUnitats = 4;
+        Integer numeroVendes = 1;
+        String titol = "hola";
         String descripcio = "Boles arbre de Nadal";
-        Article articleCreated = articleDAO.addArticle(codi,numeroUnitats,numeroVendes, descripcio);
-        
+        Article article = new Article(codi,numeroUnitats,numeroVendes, titol, descripcio);
+        articleDAO.addArticle(article);
+        Article recuperat = articleDAO.getArticleByCodi(codi);
+        Assert.assertNotNull("L'article hauria d'haver-se afegit correctament", recuperat);
+        Assert.assertEquals("El títol hauria de coincidir", titol, recuperat.getTitol());
+        Assert.assertEquals("La descripció hauria de coincidir", descripcio, recuperat.getDescripcio());
     }
+    
 }
