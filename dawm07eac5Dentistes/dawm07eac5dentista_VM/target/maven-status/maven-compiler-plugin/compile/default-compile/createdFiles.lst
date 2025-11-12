@@ -1,0 +1,8 @@
+cat/xtec/ioc/repository/DentistaRepository.class
+cat/xtec/ioc/service/impl/DentistaServiceEndpointImpl.class
+cat/xtec/ioc/service/ApplicationConfig.class
+cat/xtec/ioc/domain/LocalDateTimeAdapter.class
+cat/xtec/ioc/service/DentistaJSONService.class
+cat/xtec/ioc/domain/Dentista.class
+cat/xtec/ioc/service/DentistaServiceEndpoint.class
+cat/xtec/ioc/repository/impl/InMemoryDentistaRepository.class

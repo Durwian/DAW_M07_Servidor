@@ -1,4 +1,5 @@
 cat/xtec/ioc/service/impl/VendaServiceImpl.class
+cat/xtec/ioc/config/HibernateConfiguration.class
 cat/xtec/ioc/service/ArticleService.class
 cat/xtec/ioc/controller/VendesController.class
 cat/xtec/ioc/controller/BotigaController.class
