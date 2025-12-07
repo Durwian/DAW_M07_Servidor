@@ -5,11 +5,52 @@ import java.util.Objects;
 public class Renda {
 
     private int any;
-    
-    public Renda(int any) { //afegir les altres propietats: homes, dones, total, origen
-        this.any = any;
+    private int homes;
+    private int dones;
+    private int total;
+    private String origen;
 
+    public Renda(int any, int homes, int dones, int total, String origen) { //afegir les altres propietats: homes, dones, total, origen
+        this.any = any;
+        this.homes = homes;
+        this.dones = dones;
+        this.total = total;
+        this.origen = origen;
     }
+    
+    public int getHomes() {
+        return homes;
+    }
+
+    public void setHomes(int homes) {
+        this.homes = homes;
+    }
+
+    public int getDones() {
+        return dones;
+    }
+
+    public void setDones(int dones) {
+        this.dones = dones;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public String getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
+    
+    
 
     public int getAny() {
         return any;
