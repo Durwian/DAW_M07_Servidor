@@ -5,31 +5,29 @@
 package cat.xtec.ioc.domain.repository.impl;
 
 import cat.xtec.ioc.domain.Dentista;
-import cat.xtec.ioc.domain.LocalDateTimeAdapter;
 import cat.xtec.ioc.domain.repository.DentistaRepository;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
  * @author victor
  */
+@Repository
 public class InMemoryDentistaRepository implements DentistaRepository{
 
     private List<Dentista> dentistes = new ArrayList<Dentista>();
-    
     
     @Override
     public List<Dentista> initDentistes(String codisDentista) {
         String[] codis = codisDentista.split("##");
         
         for(String codiDentista : codis){
-            addDentistaJSON(new Dentista(codiDentista, 0.0d, 0.0d, false, new Date().getTime()));
+            addDentistaJSON(new Dentista(codiDentista, 0.0d, 0.0d, false, LocalDateTime.now()));
         }
-        
+        return dentistes;
     }
 
     @Override
@@ -59,7 +57,8 @@ public class InMemoryDentistaRepository implements DentistaRepository{
             
             if(!pacient){
                 // (dataActual-datePacient) + pacientAcumulat
-                updatedDentista.setPacientAcumulat(updatedDentista.getDatePacient() + updatedDentista.getPacientAcumulat());
+                Duration durada = Duration.between(updatedDentista.getDatePacient(), LocalDateTime.now());
+                updatedDentista.setPacientAcumulat(durada.getSeconds() + updatedDentista.getPacientAcumulat());
             }else{
                 if(preuPeces != null){
                     updatedDentista.setPreuPeces(updatedDentista.getPreuPeces() + preuPeces);
@@ -67,6 +66,9 @@ public class InMemoryDentistaRepository implements DentistaRepository{
                 
             }
         }
+        return updatedDentista;
     }
+
+    
     
 }

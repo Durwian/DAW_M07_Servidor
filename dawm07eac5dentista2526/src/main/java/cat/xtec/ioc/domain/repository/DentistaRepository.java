@@ -4,10 +4,17 @@
  */
 package cat.xtec.ioc.domain.repository;
 
+import cat.xtec.ioc.domain.Dentista;
+import java.util.List;
+
 /**
  *
  * @author victor
  */
 public interface DentistaRepository {
-    
+    public List<Dentista> initDentistes(String codisDentista);
+    public void addDentistaJSON(Dentista dentista);
+    public List<Dentista> getAllDentistes();
+    public Dentista getDentistaByCodi(String codi);
+    public Dentista updatePacientDentista(String codi, Boolean pacient, Double preuPeces);
 }
