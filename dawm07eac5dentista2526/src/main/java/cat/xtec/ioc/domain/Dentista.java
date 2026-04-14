@@ -36,7 +36,7 @@ public class Dentista {
         this.pacientAcumulat = Double.valueOf(pacientAcumulat);
         this.preuPeces = Double.valueOf(preuPeces);
         this.pacientActual = Boolean.valueOf(pacientActual);
-        this.datePacient = LocalDateTime.parse(datePacient, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        this.datePacient = LocalDateTime.parse(datePacient, DateTimeFormatter.ISO_LOCAL_DATE);
     }
     
 
