@@ -5,6 +5,7 @@
 package cat.xtec.ioc.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
@@ -19,6 +20,9 @@ public class Dentista {
     private Boolean pacientActual;
     private LocalDateTime datePacient;
 
+    public Dentista(){
+    }
+    
     public Dentista(String codi, Double pacientAcumulat, Double preuPeces, Boolean pacientActual, LocalDateTime datePacient) {
         this.codi = codi;
         this.pacientAcumulat = pacientAcumulat;
@@ -26,6 +30,15 @@ public class Dentista {
         this.pacientActual = pacientActual;
         this.datePacient = datePacient;
     }
+    
+    public Dentista(String codi, String pacientAcumulat, String preuPeces, String pacientActual, String datePacient){
+        this.codi = codi;
+        this.pacientAcumulat = Double.valueOf(pacientAcumulat);
+        this.preuPeces = Double.valueOf(preuPeces);
+        this.pacientActual = Boolean.valueOf(pacientActual);
+        this.datePacient = LocalDateTime.parse(datePacient, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+    }
+    
 
     public String getCodi() {
         return codi;
@@ -35,8 +48,7 @@ public class Dentista {
         this.codi = codi;
     }
 
-    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
-    @XmlSchemaType(name = "dateTime")
+    
     public Double getPacientAcumulat() {
         return pacientAcumulat;
     }
@@ -60,7 +72,9 @@ public class Dentista {
     public void setPacientActual(Boolean pacientActual) {
         this.pacientActual = pacientActual;
     }
-
+    
+    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
+    @XmlSchemaType(name = "dateTime")
     public LocalDateTime getDatePacient() {
         return datePacient;
     }

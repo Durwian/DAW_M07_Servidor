@@ -4,12 +4,13 @@
  */
 package cat.xtec.ioc.service.impl;
 
-import cat.ioc.xtec.service.DentistaServiceEndpoint;
+import cat.xtec.ioc.service.DentistaServiceEndpoint;
 import cat.xtec.ioc.domain.Dentista;
 import cat.xtec.ioc.domain.repository.DentistaRepository;
 import cat.xtec.ioc.domain.repository.impl.InMemoryDentistaRepository;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.jws.WebService;
 
 /**
